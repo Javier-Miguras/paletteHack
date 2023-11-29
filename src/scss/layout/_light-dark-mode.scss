@@ -1,0 +1,81 @@
+@use '../base/variables' as v;
+
+.light-mode{
+    background-color: v.$lightGray;
+    .header{
+        background-color: v.$white;
+    }
+    .dropdown-content{
+        background-color: v.$white;
+        border: 1px solid v.$gray;
+        a{
+            color: v.$black;
+            &:hover {
+                background-color: v.$gray;
+              }
+        }
+    }
+
+    .drag-container{
+        background-color: v.$white;
+    }
+    .modal{
+        background-color: v.$white;
+    }
+    .modal_about{
+        background-color: v.$white;
+    }
+    .modal-content h3{
+        color: v.$darkPurple;
+    }
+    .modal-content p{
+        color: v.$black;
+    }
+    #fileInput{
+        color: v.$black;
+    }
+    .grid-container h3{
+        color: v.$darkPurple;
+    }
+}
+
+
+
+.dark-mode{
+    background-color: v.$black;
+    .header{
+        background-color: v.$darkBlack;
+    }
+    .dropdown-content{
+        background-color: v.$black;
+        border: 1px solid v.$purple;
+        a{
+            color: v.$white;
+            &:hover {
+                background-color: v.$darkBlack;
+              }
+        }
+    }
+
+    .drag-container{
+        background-color: v.$darkBlack;
+    }
+    .modal{
+        background-color: v.$black;
+    }
+    .modal_about{
+        background-color: v.$black;
+    }
+    .modal-content h3{
+        color: v.$purple;
+    }
+    .modal-content p{
+        color: v.$white;
+    }
+    #fileInput{
+        color: v.$white;
+    }
+    .grid-container h3{
+        color: v.$purple;
+    }
+}

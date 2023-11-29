@@ -1,0 +1,31 @@
+{
+  "name": "palettehack",
+  "version": "1.0.0",
+  "description": "Artist app, obtain color palette from image",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css",
+    "dev": "gulp dev"
+  },
+  "keywords": [
+    "Artist",
+    "Painting"
+  ],
+  "author": "Javier Miguras",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "colorthief": "^2.4.0",
+    "cssnano": "^6.0.1",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser-js": "^5.2.2",
+    "sass": "^1.68.0"
+  },
+  "dependencies": {
+    "terser": "^5.22.0"
+  }
+}

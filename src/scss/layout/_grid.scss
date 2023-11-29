@@ -1,0 +1,188 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.grids{
+
+    // padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    // max-width: 100%;
+    // height: 10rem;
+ 
+}
+
+@include m.phone {
+    
+    .grids{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+}
+
+@include m.tablet {
+    
+    .grids{
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+}
+
+.grid-variation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p{
+        font-size: 1.6rem;
+        text-align: center;
+        color: transparent;
+        font-weight: 700;
+        transition: color 0.3s ease;
+        // text-shadow: transparent;
+        
+    }
+        &:hover{
+            p{
+                color: v.$white;
+                text-shadow: 1px 1px 4px rgba(24,73,95,1);
+                
+            }
+            
+        }
+    
+}
+
+.grid{
+    border-radius: 100%;
+    // height: 5.5rem;
+    // width: 5.5rem;
+    height: 9rem;
+        width: 9rem;
+    
+}
+
+
+
+
+
+
+.grid-container{
+    h3{
+        margin-bottom: 2rem;
+    }
+}
+
+.color1{
+    background-color: var(--color1);
+}
+.color2{
+    background-color: var(--color2);
+}
+.color3{
+    background-color: var(--color3);
+}
+.color4{
+    background-color: var(--color4);
+}
+.color5{
+    background-color: var(--color5);
+}
+.color6{
+    background-color: var(--color6);
+}
+.color7{
+    background-color: var(--color7);
+}
+.color8{
+    background-color: var(--color8);
+}
+.color9{
+    background-color: var(--color9);
+}
+.color10{
+    background-color: var(--color10);
+}
+
+.refresh{
+    margin-top: 4rem;
+    display: flex;
+    gap: .5rem;
+    height: 4.2rem;
+    border: none;
+    background-color: v.$green;
+    padding: 1rem;
+    border-radius: .3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover{
+        background-color: v.$darkGreen;
+    }
+    p{
+        color: v.$white;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 0;
+    }
+}
+
+.dominant{
+    padding-top: 4rem;
+    
+    justify-content: space-between;
+}
+
+@include m.phone {
+    .dominant{
+        display: flex;
+    }
+}
+
+.dominant-color{
+    background-color: var(--dColor);
+    height: 13rem;
+    width: 13rem;
+    border-radius: 100%;
+
+}
+
+
+
+
+
+// Color Animation
+
+.color-animation{
+    cursor: pointer;
+
+    &:hover{
+        animation: pulse 3s ease 0s 1 normal forwards;
+
+    @keyframes pulse {
+        0% {
+            animation-timing-function: ease-out;
+            transform: scale(1);
+            transform-origin: center center;
+        }
+    
+        10% {
+            animation-timing-function: ease-in;
+            transform: scale(0.91);
+        }
+    
+        17% {
+            animation-timing-function: ease-out;
+            transform: scale(0.98);
+        }
+    
+        33% {
+            animation-timing-function: ease-in;
+            transform: scale(0.87);
+        }
+    
+        45% {
+            animation-timing-function: ease-out;
+            transform: scale(1);
+        }
+    }
+    }
+}

@@ -1,0 +1,14 @@
+@use '../base/variables' as v;
+
+.footer{
+    padding: 6rem 0 2rem 0;
+}
+
+.footer-container{
+    h3{
+        text-align: center;
+        color: v.$purple;
+        font-weight: 700;
+        
+    }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paletteHack</title>
+    <link rel="stylesheet" href="build/css/app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Sarabun:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+   
+</head>
+<body id="body" class="light-mode">
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href=""><h1>palette<span>Hack</span></h1></a>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-btn">&#9776;</button>
+                <div class="dropdown-content">
+                  <a id="color-mode" href="#">Dark mode</a>
+                  <a id="open-about" href="#">About</a>
+                </div>
+              </div>
+              
+        </div>
+    </header>
+
+    <div id="drop-area" class="container drag-container">
+        <svg id="drop-icon" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo-plus" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2be3a6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M15 8h.01" />
+            <path d="M12.5 21h-6.5a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v6.5" />
+            <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l4 4" />
+            <path d="M14 14l1 -1c.67 -.644 1.45 -.824 2.182 -.54" />
+            <path d="M16 19h6" />
+            <path d="M19 16v6" />
+          </svg>
+        <div id="drop-text" class="drag-text">
+          <h3>Drag and drop an image here or click to select one.</h3>
+        </div>
+        <input class="upload-box" type="file" id="fileInput" accept="image/*" />
+        <div id="bnwButton" class="bnw-button">
+            <p>B&W</p>
+        </div>
+        <figure id="magnifying-area">
+            <img id="imagenPrevisualizacion" class="img-preview zoomed-in"/>
+        </figure>
+        
+        <!--image-->
+        
+        <div id="grid" class="grid-container">
+            <h3>Your Palette:</h3>
+            <div class="grids">
+                <div class="grid color1 color-animation grid-variation modalBtn">
+                </div>
+                <div class="grid color2 color-animation grid-variation modalBtn">
+                </div>
+                <div class="grid color3 color-animation grid-variation modalBtn">
+                </div>
+                <div class="grid color4 color-animation grid-variation modalBtn">
+                </div>
+                <div class="grid color5 color-animation grid-variation modalBtn">
+                </div>
+                <div class="grid color6 color-animation grid-variation modalBtn">
+                </div>
+                <div class="grid color7 color-animation grid-variation modalBtn">
+                </div>
+                <div class="grid color8 color-animation grid-variation modalBtn">
+                </div>
+                <div class="grid color9 color-animation grid-variation modalBtn">
+                </div>
+                <div class="grid color10 color-animation grid-variation modalBtn">
+                </div>
+            </div>
+            <div class="dominant">
+                <div>
+                    <h3>Dominant Color:</h3>
+                </div>
+                <div class="dominant-color  color-animation grid-variation modalBtn">
+                </div>
+            </div>
+        </div>
+        <!--palette grid-->
+        
+        <a id="refresh" class="refresh" onclick="document.location.reload();">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-reload" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M19.933 13.041a8 8 0 1 1 -9.925 -8.788c3.899 -1 7.935 1.007 9.425 4.747" />
+                <path d="M20 4v5h-5" />
+              </svg>
+            <p>Refresh</p></a>
+    
+      
+    </div>
+    <!--Palette-->
+
+    <dialog id="modal" class="modal">
+        <div class="modal-content">
+            <h3>Variations Palette</h3>
+            <div class="palette">
+                <div class="palette-tone tone1"></div>
+                <div class="palette-tone tone2"></div>
+                <div class="palette-tone tone3"></div>
+                <div class="palette-tone tone4"></div>
+                <div class="palette-tone tone5"></div>
+            </div>
+        </div>
+        <div class="modal-button">
+            <button id="closeModal"><span>X</span></button>
+        </div>
+    </dialog>
+
+    <!--palette modal-->
+
+    <dialog id="modal-about" class="modal_about">
+        <div class="modal-content">
+            <h3>About This App</h3>
+            <p>This web app was created as a birthday gift for my girlfriend, who is a painter. I developed the app with the idea that it would be a useful tool to optimize her work process.</p>
+
+                <p>paletteHack includes a series of features designed for painters.</p>
+                
+                <p>You can upload an image from your device and instantly get a palette of 10 colors. This feature will help you quickly assemble your color palette by identifying the predominant tones in the image. You'll also obtain the dominant color of the image, which corresponds to the main color that encompasses the entire image.</p>
+                
+                <p>By clicking the "B&W" button, you can view a monochromatic version of your image, making it easy to identify grayscale values.</p>
+                
+                <p>You also have the option to zoom in on the image so you don't miss a single detail.</p>
+                
+                <p>When you click on any color in the obtained palette, you'll access a table with 5 luminance variations. These variations will be lighter if the original tone is dark, and vice versa. This function can be useful for determining the composition of certain colors, making the mixing process easier.</p>
+                
+                <p>If you liked this project and are interested in web app development or development in general, I invite you to visit my GitHub profile at </p><a href="https://github.com/Javier-Miguras" target="_blank"><p class="link-github"><span>github.com/Javier-Miguras</span></p></a>
+        </div>
+        <div class="modal_about_button">
+            <button id="closeModalAbout"><span>X</span></button>
+        </div>
+    </dialog>
+
+    <!--about modal-->
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <h3>paletteHack | Developed by Javier Miguras 2023.</h3>
+        </div>
+    </footer>
+    
+    <script src="build/js/app.js"></script>
+    
+
+</body>
+</html>

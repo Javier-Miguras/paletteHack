@@ -1,0 +1,111 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.modal{
+    border: none;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 80rem;
+    justify-content: space-between;
+    padding: 0;
+
+
+    &::backdrop{
+        background-color: rgba(0, 0, 0, .5);
+    }
+}
+
+
+
+@include m.tablet {
+    .modal{
+        width: 65%;
+    }
+}
+
+@include m.desktop {
+    .modal{
+        width: 45%;
+    }
+}
+
+@include m.desktopXl {
+    .modal{
+        width: 30%;
+    }
+}
+
+
+.dsp-flex{
+    display: flex;
+}
+
+ #closeModal{
+     padding: 1.1rem;
+     border-bottom-left-radius: 2rem;
+     border: none;
+     background-color: v.$green;
+     transition: background-color 0.3s ease;
+     cursor: pointer;
+     span{
+        font-weight: 700;
+        color: v.$white;
+     }
+     &:hover{
+        background-color: v.$darkGreen;
+     }
+}
+
+.modal-content{
+    overflow-y: auto;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+    width: 100%;
+    scrollbar-width: none; /* Oculta la barra de desplazamiento de Firefox */
+    -ms-overflow-style: none; /* Oculta la barra de desplazamiento de IE/Edge */
+    &::-webkit-scrollbar {
+        width: 0; /* Oculta la barra de desplazamiento de WebKit (Safari/Chrome) */
+      }
+    h3{
+        margin: 0;
+        padding-bottom: 2rem;
+        text-align: center;
+    }
+   
+
+}
+
+.palette{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    
+}
+
+.palette-tone{
+    height: 8.5rem;
+}
+
+
+.ptone{
+    background-color: var(--ptone);
+}
+.tone1{
+    background-color: var(--tone1);
+}
+.tone2{
+    background-color: var(--tone2);
+}
+.tone3{
+    background-color: var(--tone3);
+}
+.tone4{
+    background-color: var(--tone4);
+}
+.tone5{
+    background-color: var(--tone5);
+}
+
+
+

@@ -1,0 +1,100 @@
+@use 'base/variables' as v;
+@use '../base/mixins' as m;
+
+.header{
+    padding: 1.5rem 0;
+    border-bottom: .1rem solid v.$purple;
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    h1{
+    color: v.$purple;
+    font-family: v.$title;
+    font-size: 3.4rem;
+    margin: 0;
+
+    span{
+        color: v.$darkPurple;
+    }
+
+    }
+}
+
+// .nav{
+//     background-color: v.$gray;
+//     padding: 0 3rem;
+//     text-align: end;
+//     // position: absolute;
+//     // top: 7rem;
+//     // right: 2.5%;
+//     border-bottom-left-radius: .5rem;
+//     border-bottom-right-radius: .5rem;
+//     // @include m.desktopXl {
+//     //     right: 15%;
+//     // }
+//     .nav-list{
+//         list-style: none;
+//         padding: 0;
+//         a{
+//             display: block;
+//             line-height: 1rem;
+//             color: v.$black;
+//             margin: 0;
+//             padding-bottom: 2rem;
+            
+//             &:hover{
+//                 color: v.$purple;
+//             }
+//         }
+//         .nav-list-last{
+//             padding: 0;
+//         }
+//     }
+// }
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-btn {
+    background-color: v.$purple;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: .3rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    &:hover{
+        background-color: v.$darkPurple;
+    }
+  }
+  
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    right: 0;
+  }
+  
+  /* Estilos para los elementos desplegables */
+  .dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+  }
+  
+  
+  /* Mostrar el contenido del botón desplegable al hacer clic en el botón */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  

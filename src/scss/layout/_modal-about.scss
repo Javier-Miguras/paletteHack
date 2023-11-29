@@ -1,0 +1,61 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.modal_about{
+    border: none;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 80rem;
+    justify-content: space-between;
+    padding: 0;
+    
+
+
+    &::backdrop{
+        background-color: rgba(0, 0, 0, .5);
+    }
+}
+
+@include m.tablet {
+    .modal_about{
+        width: 65%;
+    }
+}
+
+@include m.desktop {
+    .modal_about{
+        width: 45%;
+    }
+}
+
+@include m.desktopXl {
+    .modal_about{
+        width: 30%;
+    }
+}
+
+
+#closeModalAbout{
+    padding: 1.1rem;
+    border-bottom-left-radius: 2rem;
+    border: none;
+    background-color: v.$green;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    span{
+       font-weight: 700;
+       color: v.$white;
+    }
+    &:hover{
+       background-color: v.$darkGreen;
+    }
+}
+.link-github{
+    font-weight: 700;
+    span{
+        color: v.$purple;
+        &:hover{
+            color: v.$darkPurple;
+        }
+    }
+}
